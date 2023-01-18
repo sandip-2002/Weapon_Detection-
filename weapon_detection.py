@@ -8,29 +8,11 @@ net = cv2.dnn.readNet("yolov3_training_2000.weights", "yolov3_testing.cfg")
 net.setPreferableBackend(cv2.dnn.DNN_BACKEND_DEFAULT)
 net.setPreferableTarget(cv2.dnn.DNN_TARGET_CPU)
 classes = ["Weapon"]
-# with open("coco.names", "r") as f:
-#     classes = [line.strip() for line in f.readlines()]
 
 
 
-
-
-# Loading image
-# img = cv2.imread("room_ser.jpg")
-# img = cv2.resize(img, None, fx=0.4, fy=0.4)
-
-# Enter file name for example "ak47.mp4" or press "Enter" to start webcam
-# def value():
-#     val = input("Enter file name or press enter to start webcam : \n")
-#     if val == "":
-#         val = 0
-#     return val
-
-
-# for video capture
 cap = cv2.VideoCapture(0)
 
-# val = cv2.VideoCapture()
 while True:
     _, img = cap.read()
     height, width, channels = img.shape
